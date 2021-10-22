@@ -1,8 +1,8 @@
 # Survival Rates on the Titanic (Are you a Leo or a Kate?)
-![](Resources/Images/R_M_S_Titanic.jpg)
+![](Resources\Images\R_M_S_Titanic.jpg)
 
 ## Presentation
----
+
 ### Logic behind the topic selection:
 The Titanic is cool, history cool, and life is too serious… We wanted to do something that we all enjoy learning about. A large enough data set for the project but not too large to manage.
 
@@ -33,11 +33,11 @@ We started with six sources of data, analyzed the data and decided which informa
 4. How long did people survive after by class, etc.
 
 ## GitHub
----
-### [✓] Readme
-### [✓] Branch per team member (3) - Check
-### [ ] At least four commits from the duration of the first segment
-### [ ] Communication Protocols:
+
+✓ Readme  
+✓ Branch per team member (3)
+- [ ] At least four commits from the duration of the first segment
+- [ ] Communication Protocols:
 
 Name of Communidation | Format | Frequency | Audience | Owner
 ----------------------|--------|-----------|----------|------
@@ -49,13 +49,13 @@ Project Communication and Questions |	Project Slack Channel |	Before Pulling Hai
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
 ## Machine Learning Model
----
+
 A provisional machine learning model that stands in for the final machine learning model and accomplishes the following:   
 - [ ] Takes in data in from the provisional database   
 - [ ] Outputs label(s) for input data
 
 ## Database
----
+
 A provisional database that stands in for the final database and accomplishes the following: 
 - [ ] Sample data that mimics the expected final database structure or schema 
 - [ ] Draft machine learning module is connected to the provisional database
