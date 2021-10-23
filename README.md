@@ -56,8 +56,8 @@ A provisional machine learning model that stands in for the final machine learni
 
 ## Database
 
-A provisional database that stands in for the final database and accomplishes the following:  
-✓ Sample data that mimics the expected final database structure or schema  
-✓ Draft machine learning module is connected to the provisional database
+A provisional database that stands in for the final database and accomplishes the following: 
+✓ Sample data that mimics the expected final database structure or schema 
+- [ ] Draft machine learning module is connected to the provisional database
 
 
