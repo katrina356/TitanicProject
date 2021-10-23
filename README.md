@@ -36,7 +36,7 @@ We started with six sources of data, analyzed the data and decided which informa
 
 ✓ Readme  
 ✓ Branch per team member (3)
-- [ ] At least four commits from the duration of the first segment
+✓ At least four commits from the duration of the first segment
 - [ ] Communication Protocols:
 
 Name of Communidation | Format | Frequency | Audience | Owner
@@ -44,20 +44,20 @@ Name of Communidation | Format | Frequency | Audience | Owner
 Task Status Update | Slack and T/TH Class Time | 3x a Week | Project Team | All
 Project Status Update |	Thursday Class Time |	1 x Week |	TAs |	All
 Action Items Followup |	Slack and T/TH Class Time |	Saturday of Week Due		
-Risks Review and Udpate |	Tuesday Class Cime |	1x Week	Project | Team |	All
+Risks Review and Udpate |	Tuesday Class Time |	1x Week	Project | Team |	All
 Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out so After no more than 20 Minutes of Frustration |	Project Team |	All
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
 ## Machine Learning Model
 
 A provisional machine learning model that stands in for the final machine learning model and accomplishes the following:   
-- [ ] Takes in data in from the provisional database   
+✓ Takes in data in from the provisional database   
 - [ ] Outputs label(s) for input data
 
 ## Database
 
 A provisional database that stands in for the final database and accomplishes the following: 
-- [ ] Sample data that mimics the expected final database structure or schema 
+✓ Sample data that mimics the expected final database structure or schema 
 - [ ] Draft machine learning module is connected to the provisional database
 
 
