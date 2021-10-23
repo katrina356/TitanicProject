@@ -1,6 +1,5 @@
 # Machine Learning Model
 
-## Machine Learning Model
 A write up of at least one machine learning algorithm used on the Titanic data set. Included are the sources for codes, reasoning and paths forward.
 
 ## Random Forest Classifier
@@ -15,6 +14,7 @@ Learned about a pandas_profiling after reading other Titanic datasets. It is mor
 4. Code machine learning algorithms.
 
 ### Output labels
+Not sure what this means.
 
 #### Source
 a. pandas_profiling: https://github.com/pandas-profiling/pandas-profiling/blob/develop/README.md#command-line-usage
