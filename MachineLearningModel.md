@@ -10,7 +10,7 @@ Learned about a pandas_profiling after reading other Titanic datasets. It is mor
 ### Steps:
 1. Explore the data. See what is available.
    a. Install the panadas_profiling package.
-3. Look at the baseline model. (Suggested in the Titanic dataset writeups). That baseline is the gender is is .70.
+3. Look at the baseline model. (Suggested in the Titanic dataset writeups). That baseline for the gender is is .70.
 4. Code machine learning algorithms.
   a. very much challenge. I think I removed some columns that were not needed. I wanted to remove rows missing values for "Cabin" and "age" but then the Standard Scaler errored.
   b. I tried to do whatever machine learning does using age and ideally sex. Did not understand how to do that.
@@ -59,7 +59,7 @@ Who Died on the Titanic
 
 * Thomas Andrews, Titanic architect
 
-* ohn Thayer, railroad executive
+* John Thayer, railroad executive
 
 * Jacques Futrelle
 
