@@ -1,2 +1,0 @@
-# TitanicProject
-Final Project
