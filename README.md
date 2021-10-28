@@ -2,6 +2,8 @@
 ![](Resources\Images\R_M_S_Titanic.jpg)
 
 ## Presentation
+Please visit the following link for the presentation
+https://docs.google.com/presentation/d/1Y2aKiFc-UZewT-JXwtuPr3EoXB0O3qYDPOq4Nfag3vs/edit?usp=sharing
 
 ### Logic behind the topic selection:
 The Titanic is cool, history cool, and life is too serious… We wanted to do something that we all enjoy learning about. A large enough data set for the project but not too large to manage.
