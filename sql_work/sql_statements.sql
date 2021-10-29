@@ -62,7 +62,7 @@ SELECT
 	body,
 	countryid2,
 	survived_y_n
--- INTO filtered_data
+INTO filtered_data
 FROM Titanic_Combined_sql
 WHERE 
 	job_group ISNULL OR
@@ -75,5 +75,5 @@ WHERE
 ORDER BY
 	index;
    
- SELECT COUNT (survived_y_n)
- 	FROM filtered_data;
+--SELECT COUNT (survived_y_n)
+--FROM filtered_data;
