@@ -1,3 +1,4 @@
+index,passenger_name,born,died,age,age_at_death,gender,marital_status,category,ticket_class,job_group,ticket,cabin,embarked,disembarked,country_of_residence,profession,job,pclass,survived,sibsp,parch,fare,boat,body,countryid2,survived_y_n
 2900,?a?i? Jego Grga,1894,1912,18,18,Male,Single,Passenger,3rd Class,,315091,,Southampton,,Croatia [Austria-Hungary],Farmer,Farmer,,,,,,,,104,
 2901,?a?i? Luka,1873,1912,38,38,Male,Married,Passenger,3rd Class,,315089,,Southampton,,Croatia [Austria-Hungary],Farmer,Farmer,,,,,,,,105,
 2902,?a?i? Manda,1891,1912,20,20,Female,Single,Passenger,3rd Class,,315087,,Southampton,,Croatia [Austria-Hungary],Farm Labourer,Farm Labourer,,,,,,,,107,
