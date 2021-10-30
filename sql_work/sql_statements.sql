@@ -1,3 +1,4 @@
+-- combine four tables into one database named Titanic_Combined_sql
 SELECT DISTINCT ON (p.index) p.index, 
 	p.passenger_name,
 	p.born,
@@ -34,6 +35,10 @@ FROM RMS_titanic_passengers_and_crew AS p
 	LEFT JOIN Titanic_Survivors AS s
 		ON p.index = s.index;
 
+--Change the null values in the survived column to 0, which is equal to 0.  (1 = survivied; 0 = did not survive)
+UPDATE Titanic_Combined_sql SET survived_y_n = 0 WHERE survived_y_n IS NULL
+
+-- Filter out the passenger_names that were not on the ship when the ship hit the iceberg.
 SELECT 
 	index,
 	passenger_name,
@@ -69,11 +74,14 @@ WHERE
 	job_group = 'H&W Guarantee Group' OR
 	job_group = 'Musician' OR
 	job_group = 'Postal Clerk' OR
-	job_group = 'Servant' OR
+	job_group = 'Servant' OR	
 	job_group = 'Substitute Crew' OR
-	job_group = 'Titanic Officers'	
-ORDER BY
-	index;
-   
---SELECT COUNT (survived_y_n)
---FROM filtered_data;
+	job_group = 'Titanic Officers'
+ORDER BY index;
+
+
+
+
+--SELECT survived_y_n, COUNT(*)
+--	FROM filtered_data
+--GROUP BY survived_y_n;

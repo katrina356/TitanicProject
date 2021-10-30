@@ -16,8 +16,8 @@ CREATE TABLE RMS_titanic_passengers_and_crew(
 	embarked VARCHAR,
 	disembarked VARCHAR);
 
--- SELECT COUNT(index)
--- FROM RMS_titanic_passengers_and_crew;
+--SELECT COUNT(index)
+--FROM RMS_titanic_passengers_and_crew;
 
 -- Creating table RMS_Titanic_country_of_residency
 CREATE TABLE RMS_Titanic_country_of_residency(
@@ -33,8 +33,8 @@ CREATE TABLE RMS_Titanic_country_of_residency(
 	country_of_residence VARCHAR,
 	profession VARCHAR);
 
--- SELECT COUNT(mainID)
--- FROM RMS_Titanic_country_of_residency;
+--SELECT COUNT(mainID)
+--FROM RMS_Titanic_country_of_residency;
 
 -- Creating table Titanic
 CREATE TABLE Titanic(
@@ -56,8 +56,8 @@ CREATE TABLE Titanic(
 	home_dest VARCHAR);
 
 
--- SELECT COUNT(main_key)
--- FROM Titanic;
+--SELECT COUNT(main_key)
+--FROM Titanic;
 
 -- Creating table Titanic_Survivors
 CREATE TABLE Titanic_Survivors(
@@ -68,8 +68,8 @@ CREATE TABLE Titanic_Survivors(
 	ticket VARCHAR,
 	joined VARCHAR,
 	job VARCHAR,
-	boat_body VARCHAR),
-	survived_y_n);
+	boat_body VARCHAR,
+	survived_y_n FLOAT);
 
--- SELECT COUNT(index)
+--SELECT COUNT(index)
 --FROM Titanic_Survivors;
