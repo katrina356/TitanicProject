@@ -2,8 +2,6 @@
 ![](Resources\Images\R_M_S_Titanic.jpg)
 
 ## Presentation
-Please visit the following link for the presentation
-https://docs.google.com/presentation/d/1Y2aKiFc-UZewT-JXwtuPr3EoXB0O3qYDPOq4Nfag3vs/edit?usp=sharing
 
 ### Logic behind the topic selection:
 The Titanic is cool, history cool, and life is too serious… We wanted to do something that we all enjoy learning about. A large enough data set for the project but not too large to manage.
@@ -32,6 +30,13 @@ We started with six sources of data, analyzed the data, and decided which inform
     * Cost by class compared to today
 3. What was the class fare structure?
 4. How long did people survive after by class, etc.?
+
+### Documentation:
+Please refer to the following link for our Google Slides:
+[Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
+
+Please refer to the following link for visualizations:
+
 
 ## GitHub 
 
