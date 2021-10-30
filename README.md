@@ -31,6 +31,13 @@ We started with six sources of data, analyzed the data, and decided which inform
 3. What was the class fare structure?
 4. How long did people survive after by class, etc.?
 
+### Documentation:
+Please refer to the following link for our Google Slides:
+[Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
+
+Please refer to the following link for visualizations:
+
+
 ## GitHub 
 
 ✓ Readme  
