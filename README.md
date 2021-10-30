@@ -55,8 +55,10 @@ A provisional machine learning model that stands in for the final machine learni
 
 ## Database
 
-A provisional database that stands in for the final database and accomplishes the following:  
-✓ Sample data that mimics the expected final database structure or schema  
-✓Draft machine learning module is connected to the provisional database
+Several sites were reviewed for data sets.  These included Kaggle, Data is Plural and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information and three tables were utilzed.  The table from Data is Plural was also used. 
 
+The data sets were put into .csv and Jupyter Notebook (Pandas).  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned.  
 
+We were able to give each passenger a distict identifier and then the four tables were combined and filtered in PostgeSQL.  The filer removed passengers that were not on the Titanic when the ship struck the iceberg.
+
+Cleaning included taking out special characters and replacing stings with numerical data.
