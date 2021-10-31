@@ -4,15 +4,15 @@ Final Project for Denver University Data Analytics Bootcamp
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are a lot of mysteries around the Titanic.  Who survived, who did not survive and why?  We selected this subject to understand some of the "whys" around the passengers survivablity.  Also, history is interesting, and we wanted to understand more about the history of the Titanic.  We also did not want to do something too serious. 
+There are a lot of mysteries around the Titanic. Who survived, who did not survive and why? We selected this subject to understand some of the "whys" around the passengers survivability. Also, history is interesting, and we wanted to understand more about the history of the Titanic.
 
-* Original Data Souces:  
+Original Data Sources:  
 [Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)  
 [Data is Plural](https://www.data-is-plural.com/archive/2016-03-30-edition/)
 
-By analyzing demographic around the passengers and crew of the Titanic, the model will be able to prdedict whether or not someone would survive based on ticket class, gender, country of residency, ANY THING ELSE...
+By analyzing demographic around the passengers and crew of the Titanic, the model will be able to predict whether or not someone would survive based on age, ticket class, gender, and fare.
 
-As an example, someone who worked in the engine, would have a less ability to survive than someone in first class.  Or someone who is in third class might survive over someone in first class, because they had a grit to survive a tradgecy while a first class passenger might think that they are too good to go in the boat or someone one will be along soon to save them.  This should be able to help us gain insight on the passengers of the ship.
+As an example, someone who worked in the engine, would have a less ability to survive than someone in first class. Or, someone who is in third class might survive over someone in first class, because they had a grit to survive a tragedy, while a first-class passenger might think that they are too good to go in the boat or someone one will be along soon to save them.
 
 ## Contributors
 
@@ -22,7 +22,7 @@ Member's Name | Role
  [Sara](https://github.com/sarifrey) | Machine Learning 
  [Shrese](https://github.com/shrese) | Database 
 
-All members worked together on each section to esure accuracy of data, modeling, and information provided to the reader.
+*All members worked together on each section to ensure accuracy of data, modeling, and information provided to the reader.
 
 ## Communication Protocol
 
@@ -35,7 +35,7 @@ Risks Review and Update |	Tuesday Class Time |	1x Week	Project | Team |	All
 Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; So After no more than 20 Minutes of Frustration |	Project Team |	All
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
-## Inital questions for consideration
+## Initial questions for consideration
 1. How do the following impact survival rates?
     * Age
     * Adult vs. Child
@@ -61,37 +61,37 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 * Excel to obtain initial datasets in .csv format.
 * PGAdmin to build the DataFrame via PostgreSQL.
 * Jupyter Notebook for the machine learning.
-* Tableau for visualizaion and interactivity.
+* Tableau for visualization and interactivity.
 
 DO WE WANT IMAGES?  DO WE WANT MORE HERE?  
 
 ## Data Exploration
-Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information, and three tables were utilzed.  The table reviewed from Data is Plural was also used. 
+Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information, and three tables were utilized.  The table reviewed from Data is Plural was also used. 
 
-Six sources of data were chosen for analyis from these sites.  They were analyzed in order to decide which information we need to utilize from which datasets.  This helped us understand whether we need all or only some of the datasets.
+Six sources of data were chosen from these sites.  We reviewed the raw data in order to decide which information we need to utilize from which datasets.  This helped us understand whether we need all or only some of the datasets.
 
 The datasets were put into .csv and Jupyter Notebook using Pandas.  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned. (Inital_Review folder ADD FOLDER TO GITHUB)
 
 ## Database
 Once a decision was made on the datasets, it was decided to use PostgreSQL via PGAdmin to build the DataFrame.
 
-Steps:
+Steps Taken:
 * Created a schema of the data via an ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
 ![](Resources/Images/QuickDBD-export.png)
 
-* Utilizing the ERD were created in PostgreSQL. (table_creation.slq)
-* The original dataset was imported and filtered into PostgresSQL.
+* Utilizing the ERD tables were built in PostgreSQL. (table_creation.slq)
+* The original dataset was imported to PostgresSQL.
 * SQL queries were written to make the data more usable and complete.  
     * Some of the column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
     * The NULL values in the survived_y_n were replaced with 0.
         * survived = 1
         * not survived = 0
-    * Removed any passengers or crew members that were not on the ship when it hit the iceberg.
+    * Removed any passengers and crew members that were not on the ship when it hit the iceberg.
     * Removed any special characters from names.
     * Relacing strings in age with numerical data. 
 * SQL queries were used to combine the four datasets into the final dataset. (sql_statement.sql)
-* The combined data was exported into the DataFrame use for analysis. (RMS_Titanic_Final_DataFrame.csv)  
+* The combined data was exported into the DataFrame used for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
 ![](Resources/Images/pgadmin.png)
 
@@ -101,8 +101,8 @@ The biggest challenge to the data was understanding how the data worked and how 
 ## Machine Learning Model
 The RandomForestClassifier was initially utilized for this analysis to predict who survived the Titanic disaster.
 
-Steps:
-* Explore the data. See what is available. 
+Steps Taken:
+* Explore the data. See what is available. () 
     * Install the panadas_profiling package.
     * Tied charts using the seaborn_library after seeing the results in the Kaggle Titanic dataset.  
     * Create charts on survivability based on factors: age, gender, and ticket class.
@@ -112,8 +112,8 @@ Steps:
     * Removed data not used or not informing survivability.
     * Ran Random Forest Classifier
     * Created and ran confusion matrix
-___
 
+How data was used:
 Data | Training | Testing | To Numeric
 ---------|:----------:|:---------:|:---------:
 gender^ | x | x | x | 
@@ -130,7 +130,7 @@ survived_y_n†† | | x | |
 
 Any unlisted columns from the DataFrame were removed.  
 ^ Gender and ticket_class are the primary features for determining survivability on the Titanic.  
-† Fare is a subfeature based on ticket_class.  
+† Fare is a sub feature based on ticket_class.  
 †† The feature “survived_y_n” was removed from the training to test the accuracy.
 ¶ Sibsp and Parch denote how many siblings/parents were on board.   
 ___
@@ -144,7 +144,7 @@ ___
 Age + survived_y_n + category returns that the younger people, especially crew members did not survive.
 ___
 
-The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall the numbers are okay. The f1-score is high enough. Precision is decent. SHOULD WE SAY WHY PRECISION IS DECENT?
+The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall, the numbers are okay. The f1-score is high enough. Precision is decent. SHOULD WE SAY WHY PRECISION IS DECENT?
 
 ![](Resources/Images/randomforest.png)
 ___
