@@ -1,7 +1,7 @@
 # Survival Rates on the Titanic (Are you a Leo or a Kate?)
-### Final Project for Denver University Data Analytics Bootcamp
+Final Project for Denver University Data Analytics Bootcamp
 
-![](Resources\Images\R.jpg)    
+![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
 There are a lot of mysteries around the Titanic.  Who survived, who did not survive and why?  We selected this subject to understand some of the why around the passengers survivablity.  Also, history is interesting and we wanted to understand more about the history of the Titanic.  We also did not want to do something too serious. 
@@ -20,7 +20,7 @@ Member's Name | Role
 
 All members worked together on each section to esure accuracy of data, modeling and information provided to the reader.
 
-### Communication Protocol
+## Communication Protocol
 
 Name of Communication | Format | Frequency | Audience | Owner
 ----------------------|--------|-----------|----------|------
@@ -31,7 +31,7 @@ Risks Review and Update |	Tuesday Class Time |	1x Week	Project | Team |	All
 Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; So After no more than 20 Minutes of Frustration |	Project Team |	All
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
-## Inital questions to consider in the analysis
+## Inital questions for consideration
 1. How do the following impact survival rates?
     * Age
     * Adult vs. Child
@@ -48,39 +48,34 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 4. How long did people survive after by class, etc.?
 
 ## Links to External Information
-* Original Data Souces:
-[Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)
+* Original Data Souces:  
+[Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)  
 [Data is Plural](https://www.data-is-plural.com/archive/2016-03-30-edition/)
 
-* Google Slides:  
-[Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
+* [Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
 
-* Please refer to the following link for visualizations:
-ADD LINK!
+* [Tableau](https://public.tableau.com/app/profile/katrina.holcomb/viz/Titanic_Prelim_V2/TitanicFinal?publish=yes)
 
-## Presentation
-### Technology and Analytic Tools
-WHAT DID WE USE AND WHY?
-IMAGES?  
+## Technology and Analytic Tools
+* Excel to obtain initial data sets in .csv format.
+* PGAdmin to build the DataFrame via PostgreSQL.
+* Jupyter Notebook for the machine learning.
+* Tableau for visualizaion and interactivity.
 
-### Data Exploration
-WHAT/HOW DID WE DO TO EXPLORE THE DATA BEFORE PUTTING IN A DATABASE
+DO WE WANT IMAGES?  DO WE WANT MORE HERE?  
 
-We started with six sources of data, analyzed the data, and decided which information we need to utilize from which data sets.  This will help us understand whether we need all or only some of the data sets.
-
+## Data Exploration
 Several sites were reviewed for data sets.  These included Kaggle, Data is Plural and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information and three tables were utilzed.  The table from Data is Plural was also used. 
 
-The data sets were put into .csv and Jupyter Notebook (Pandas).  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned.  
+Six sources of data chosen for analyis from these sites.  They were analyzed in order to decide which information we need to utilize from which data sets.  This helped us understand whether we need all or only some of the data sets.
 
-We were able to give each passenger a distict identifier and then the four tables were combined and filtered in PostgeSQL.  The filer removed passengers that were not on the Titanic when the ship struck the iceberg.
+The data sets were put into .csv and Jupyter Notebook using Pandas.  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned. (Inital_Review folder)
 
-Cleaning included taking out special characters and replacing stings with numerical data.
-
-### Database
+## Database
 Once a decision was made on the datasets, it was decided to use PostgreSQL via PGAdmin to build the DataFrame.
 * Created a schema of the data via ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
-![](Resources\Images\QuickDBD-export.png)
+![](Resources/Images/QuickDBD-export.png)
 
 Steps:
 * Utilizing the schema tables were created in PostgreSQL. (table_creation.slq)
@@ -91,10 +86,12 @@ Steps:
         * survived = 1
         * not survived = 0
     * Removed any passengers or crew members that were not on the ship when it hit the iceberg.
+    * Removed any special characters from names
+    * Relacing strings in age with numerical data. 
 * The imported datasets were connected and combined into the final dataset. (sql_statement.sql)
 * The combined data was exported into the DataFrame use for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
-![](Resources\Images\pgadmin.png)
+![](Resources/Images/pgadmin.png)
 ___
 The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was that the names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
 
@@ -145,13 +142,13 @@ Steps:
 ___
 The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall the numbers are okay. The f1-score is high enough. The precision is decent.
 
-![](Resources\Images\randomforest.png)
+![](Resources/Images/randomforest.png)
 ___
 Pandas Profiling - During the research and analysis of the modeling process, Pandas profiling was discovered as a great way to view the overall statistics of the data.  It is visually more appealing and interactive. 
 
 THIS MAY NOT BE THE IMAGE WE WANT TO USE FOR THE PANDAS PROFILING...
 
-![](Resources\Images\pandasprofiling.png)
+![](Resources/Images/pandasprofiling.png)
 ___
 Sources:
 1. [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling/blob/develop/README.md#command-line-usage) 
