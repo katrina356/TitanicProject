@@ -4,7 +4,11 @@ Final Project for Denver University Data Analytics Bootcamp
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are a lot of mysteries around the Titanic.  Who survived, who did not survive and why?  We selected this subject to understand some of the why around the passengers survivablity.  Also, history is interesting and we wanted to understand more about the history of the Titanic.  We also did not want to do something too serious. 
+There are a lot of mysteries around the Titanic.  Who survived, who did not survive and why?  We selected this subject to understand some of the "whys" around the passengers survivablity.  Also, history is interesting, and we wanted to understand more about the history of the Titanic.  We also did not want to do something too serious. 
+
+* Original Data Souces:  
+[Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)  
+[Data is Plural](https://www.data-is-plural.com/archive/2016-03-30-edition/)
 
 By analyzing demographic around the passengers and crew of the Titanic, the model will be able to prdedict whether or not someone would survive based on ticket class, gender, country of residency, ANY THING ELSE...
 
@@ -18,7 +22,7 @@ Member's Name | Role
  [Sara](https://github.com/sarifrey) | Machine Learning 
  [Shrese](https://github.com/shrese) | Database 
 
-All members worked together on each section to esure accuracy of data, modeling and information provided to the reader.
+All members worked together on each section to esure accuracy of data, modeling, and information provided to the reader.
 
 ## Communication Protocol
 
@@ -48,16 +52,13 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 4. How long did people survive after by class, etc.?
 
 ## Links to External Information
-* Original Data Souces:  
-[Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)  
-[Data is Plural](https://www.data-is-plural.com/archive/2016-03-30-edition/)
 
 * [Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
 
 * [Tableau](https://public.tableau.com/app/profile/katrina.holcomb/viz/Titanic_Prelim_V2/TitanicFinal?publish=yes)
 
 ## Technology and Analytic Tools
-* Excel to obtain initial data sets in .csv format.
+* Excel to obtain initial datasets in .csv format.
 * PGAdmin to build the DataFrame via PostgreSQL.
 * Jupyter Notebook for the machine learning.
 * Tableau for visualizaion and interactivity.
@@ -65,69 +66,41 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 DO WE WANT IMAGES?  DO WE WANT MORE HERE?  
 
 ## Data Exploration
-Several sites were reviewed for data sets.  These included Kaggle, Data is Plural and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information and three tables were utilzed.  The table from Data is Plural was also used. 
+Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information, and three tables were utilzed.  The table reviewed from Data is Plural was also used. 
 
-Six sources of data chosen for analyis from these sites.  They were analyzed in order to decide which information we need to utilize from which data sets.  This helped us understand whether we need all or only some of the data sets.
+Six sources of data were chosen for analyis from these sites.  They were analyzed in order to decide which information we need to utilize from which datasets.  This helped us understand whether we need all or only some of the datasets.
 
-The data sets were put into .csv and Jupyter Notebook using Pandas.  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned. (Inital_Review folder)
+The datasets were put into .csv and Jupyter Notebook using Pandas.  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned. (Inital_Review folder ADD FOLDER TO GITHUB)
 
 ## Database
 Once a decision was made on the datasets, it was decided to use PostgreSQL via PGAdmin to build the DataFrame.
-* Created a schema of the data via ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
+
+Steps:
+* Created a schema of the data via an ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
 ![](Resources/Images/QuickDBD-export.png)
 
-Steps:
-* Utilizing the schema tables were created in PostgreSQL. (table_creation.slq)
+* Utilizing the ERD were created in PostgreSQL. (table_creation.slq)
 * The original dataset was imported and filtered into PostgresSQL.
-* Queries were written to make the data more usable and complete.  
-    * Some of the column names were changed as PGAdmin would not allow the original column name because they were functions within the SQL language.
+* SQL queries were written to make the data more usable and complete.  
+    * Some of the column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
     * The NULL values in the survived_y_n were replaced with 0.
         * survived = 1
         * not survived = 0
     * Removed any passengers or crew members that were not on the ship when it hit the iceberg.
-    * Removed any special characters from names
+    * Removed any special characters from names.
     * Relacing strings in age with numerical data. 
-* The imported datasets were connected and combined into the final dataset. (sql_statement.sql)
+* SQL queries were used to combine the four datasets into the final dataset. (sql_statement.sql)
 * The combined data was exported into the DataFrame use for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
 ![](Resources/Images/pgadmin.png)
-___
+
 The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was that the names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
 
 
-### Machine Learning Model
+## Machine Learning Model
 The RandomForestClassifier was initially utilized for this analysis to predict who survived the Titanic disaster.
 
-Data | Training | Testing | To Numeric
----------|----------|---------|---------
-gender^ | x | x | x | 
-ticket_class^ | x | x | x | 
-age | x | x |  | 
-marital_status | x | x | x | 
-category | x | x | x | 
-embarked | x | x | x | 
-country_of_residence | x | x | x |  
-sibsp¶ | x | x |  | 
-parch¶ | x | x |  | 
-fare†† | x | x |  | 
-survived_y_n†† | | x | | 
-
-All unlisted columns from the DataFrame were removed.  
-^ Gender and ticket_class = primary features for determining survivability on the Titanic.  
-† Fare is a subfeature based on ticket_class.  
-†† The feature “survived_y_n” wasremoved from the training to test the accuracy.
-¶ Sibsp and Parch denote how many siblings/parents were on board.   
-___
-Features by importance:  
-    (0.30503702309593206, 'age'),  
-    (0.2139435376173998, 'gender'),  
-    (0.11452194680648929, 'ticket_class'),  
-    (0.1023419958134857, 'fare'),
-
-___
-Age + survived_y_n + category returns that the younger people, especially crew members did not survive.
-___
 Steps:
 * Explore the data. See what is available. 
     * Install the panadas_profiling package.
@@ -140,7 +113,38 @@ Steps:
     * Ran Random Forest Classifier
     * Created and ran confusion matrix
 ___
-The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall the numbers are okay. The f1-score is high enough. The precision is decent.
+
+Data | Training | Testing | To Numeric
+---------|:----------:|:---------:|:---------:
+gender^ | x | x | x | 
+ticket_class^ | x | x | x | 
+age | x | x |  | 
+marital_status | x | x | x | 
+category | x | x | x | 
+embarked | x | x | x | 
+country_of_residence | x | x | x |  
+sibsp¶ | x | x |  | 
+parch¶ | x | x |  | 
+fare†† | x | x |  | 
+survived_y_n†† | | x | | 
+
+Any unlisted columns from the DataFrame were removed.  
+^ Gender and ticket_class are the primary features for determining survivability on the Titanic.  
+† Fare is a subfeature based on ticket_class.  
+†† The feature “survived_y_n” was removed from the training to test the accuracy.
+¶ Sibsp and Parch denote how many siblings/parents were on board.   
+___
+Features by importance:  
+    (0.30503702309593206, 'age'),  
+    (0.2139435376173998, 'gender'),  
+    (0.11452194680648929, 'ticket_class'),  
+    (0.1023419958134857, 'fare'),
+
+___
+Age + survived_y_n + category returns that the younger people, especially crew members did not survive.
+___
+
+The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall the numbers are okay. The f1-score is high enough. Precision is decent. SHOULD WE SAY WHY PRECISION IS DECENT?
 
 ![](Resources/Images/randomforest.png)
 ___
@@ -157,13 +161,6 @@ Sources:
 4. [RandomForestClassifier](https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8)
 
 ### Interactive Dashboard
-HOW WAS THE DASHBOARD CREATED
-
-CHALLENGES
-
-SUCCESS
-
-IMAGES
 
 ## Conclusion
 Overview:
