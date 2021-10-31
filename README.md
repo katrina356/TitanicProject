@@ -77,22 +77,87 @@ We were able to give each passenger a distict identifier and then the four table
 Cleaning included taking out special characters and replacing stings with numerical data.
 
 ### Database
-HOW WAS THE DATABASE CREATED
+Once a decision was made on the datasets, it was decided to use PostgreSQL via PGAdmin to build the DataFrame.
+* Created a schema of the data via ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
-CHALLENGES
+![](Resources\Images\QuickDBD-export.png)
 
-SUCCESS
+Steps:
+* Utilizing the schema tables were created in PostgreSQL. (table_creation.slq)
+* The original dataset was imported and filtered into PostgresSQL.
+* Queries were written to make the data more usable and complete.  
+    * Some of the column names were changed as PGAdmin would not allow the original column name because they were functions within the SQL language.
+    * The NULL values in the survived_y_n were replaced with 0.
+        * survived = 1
+        * not survived = 0
+    * Removed any passengers or crew members that were not on the ship when it hit the iceberg.
+* The imported datasets were connected and combined into the final dataset. (sql_statement.sql)
+* The combined data was exported into the DataFrame use for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
-IMAGES
+![](Resources\Images\pgadmin.png)
+___
+The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was that the names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
+
 
 ### Machine Learning Model
-HOW WAS THE MODEL CREATED
+The RandomForestClassifier was initially utilized for this analysis to predict who survived the Titanic disaster.
 
-CHALLENGES
+Data | Training | Testing | To Numeric
+---------|----------|---------|---------
+gender^ | x | x | x | 
+ticket_class^ | x | x | x | 
+age | x | x |  | 
+marital_status | x | x | x | 
+category | x | x | x | 
+embarked | x | x | x | 
+country_of_residence | x | x | x |  
+sibsp¶ | x | x |  | 
+parch¶ | x | x |  | 
+fare†† | x | x |  | 
+survived_y_n†† | | x | | 
 
-SUCCESS
+All unlisted columns from the DataFrame were removed.  
+^ Gender and ticket_class = primary features for determining survivability on the Titanic.  
+† Fare is a subfeature based on ticket_class.  
+†† The feature “survived_y_n” wasremoved from the training to test the accuracy.
+¶ Sibsp and Parch denote how many siblings/parents were on board.   
+___
+Features by importance:  
+    (0.30503702309593206, 'age'),  
+    (0.2139435376173998, 'gender'),  
+    (0.11452194680648929, 'ticket_class'),  
+    (0.1023419958134857, 'fare'),
 
-IMAGES
+___
+Age + survived_y_n + category returns that the younger people, especially crew members did not survive.
+___
+Steps:
+* Explore the data. See what is available. 
+    * Install the panadas_profiling package.
+    * Tied charts using the seaborn_library after seeing the results in the Kaggle Titanic dataset.  
+    * Create charts on survivability based on factors: age, gender, and ticket class.
+* Look at the baseline model. (Suggested in the Titanic dataset writeups.  The Kaggle Titanic dataset baseline for the women surviving is 70 percent. 
+* Code machine learning algorithms.  
+    * In the preprocessing, transformed data
+    * Removed data not used or not informing survivability.
+    * Ran Random Forest Classifier
+    * Created and ran confusion matrix
+___
+The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall the numbers are okay. The f1-score is high enough. The precision is decent.
+
+![](Resources\Images\randomforest.png)
+___
+Pandas Profiling - During the research and analysis of the modeling process, Pandas profiling was discovered as a great way to view the overall statistics of the data.  It is visually more appealing and interactive. 
+
+THIS MAY NOT BE THE IMAGE WE WANT TO USE FOR THE PANDAS PROFILING...
+
+![](Resources\Images\pandasprofiling.png)
+___
+Sources:
+1. [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling/blob/develop/README.md#command-line-usage) 
+2. [Machine Learning Code - activestate](https://www.activestate.com/blog/how-to-use-machine-learning-to-determine-titanic-survivors/)
+3. [Machine Learning Code - betterprogramming](https://betterprogramming.pub/titanic-survival-prediction-using-machine-learning-4c5ff1e3fa16)
+4. [RandomForestClassifier](https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8)
 
 ### Interactive Dashboard
 HOW WAS THE DASHBOARD CREATED
