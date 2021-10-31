@@ -36,6 +36,7 @@ Please refer to the following link for our Google Slides:
 [Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
 
 Please refer to the following link for visualizations:
+[Tableau](https://public.tableau.com/app/profile/katrina.holcomb/viz/Titanic_Prelim_V2/TitanicFinal?publish=yes)
 
 
 ## GitHub 
