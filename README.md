@@ -4,15 +4,15 @@ Final Project for Denver University Data Analytics Bootcamp
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are a lot of mysteries around the Titanic. Who survived, who did not survive and why? We selected this subject to understand some of the "whys" around the passengers survivability. Also, history is interesting, and we wanted to understand more about the history of the Titanic.
+There are many unanswered questions around the sinking of the Titanic. Who survived? Who did not survive and why? We selected this subject to understand some of the "whys" around passenger survivability. We wanted to understand more about the history of the Titanic. Also, history is interesting. 
 
 Original Data Sources:  
 [Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)  
 [Data is Plural](https://www.data-is-plural.com/archive/2016-03-30-edition/)
 
-By analyzing demographic around the passengers and crew of the Titanic, the model will be able to predict whether or not someone would survive based on age, ticket class, gender, and fare.
+From analyzing demographics around the passengers and crew of the Titanic, the model will predict whether or not someone would survive based on age, ticket class, and gender.
 
-As an example, someone who worked in the engine, would have a less ability to survive than someone in first class. Or, someone who is in third class might survive over someone in first class, because they had a grit to survive a tragedy, while a first-class passenger might think that they are too good to go in the boat or someone one will be along soon to save them.
+As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class. Another example, a passenger in third class has a better survivability rate than someone in first class because the third class passanger had the grit to survive a tragedy.
 
 ## Contributors
 
@@ -66,37 +66,36 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 DO WE WANT IMAGES?  DO WE WANT MORE HERE?  
 
 ## Data Exploration
-Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable information, and three tables were utilized.  The table reviewed from Data is Plural was also used. 
+Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable dataset and three tables were utilized.  The table reviewed from Data is Plural was also used. 
 
-Six sources of data were chosen from these sites.  We reviewed the raw data in order to decide which information we need to utilize from which datasets.  This helped us understand whether we need all or only some of the datasets.
+Six sources of data were chosen from these sites.  We reviewed the raw data in order to decide which information we needed to utilize from each dataset.  This helped us understand whether we needed all or some of the datasets.
 
-The datasets were put into .csv and Jupyter Notebook using Pandas.  Data was analyzed to see what type of data is, how it might be used and how it will need to be cleaned. (Inital_Review folder ADD FOLDER TO GITHUB)
+The datasets were put into .csv and connected to Jupyter Notebook through SQL in Pandas.  Data were analyzed to see the dataypes, how it might be used and how it is was cleaned. (Inital_Review folder ADD FOLDER TO GITHUB)
 
 ## Database
-Once a decision was made on the datasets, it was decided to use PostgreSQL via PGAdmin to build the DataFrame.
+AFter the decision was made on the datasets, PostgreSQL via PGAdmin was used to build the DataFrame.
 
 Steps Taken:
-* Created a schema of the data via an ERD showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
+* Used ERD to creaet a schema of the data, showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
 ![](Resources/Images/QuickDBD-export.png)
 
-* Utilizing the ERD tables were built in PostgreSQL. (table_creation.slq)
-* The original dataset was imported to PostgresSQL.
-* SQL queries were written to make the data more usable and complete.  
-    * Some of the column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
+* Utilized the ERD tables to build in PostgreSQL. (table_creation.slq)
+* Imported original dataset to PostgresSQL.
+* SQL queries written to make the data more usable and complete.  
+    * Column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
     * The NULL values in the survived_y_n were replaced with 0.
         * survived = 1
         * not survived = 0
-    * Removed any passengers and crew members that were not on the ship when it hit the iceberg.
-    * Removed any special characters from names.
-    * Relacing strings in age with numerical data. 
-* SQL queries were used to combine the four datasets into the final dataset. (sql_statement.sql)
+    * Removed assengers and crew members that were not on the Titanic when it hit the iceberg.
+    * Removed special characters from names.
+    * Relaced strings in age with numerical data. 
+* SQL queries wused to combine the four datasets into the final dataset. (sql_statement.sql)
 * The combined data was exported into the DataFrame used for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
 ![](Resources/Images/pgadmin.png)
 
-The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was that the names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
-
+The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was the passenger names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
 
 ## Machine Learning Model
 The RandomForestClassifier was initially utilized for this analysis to predict who survived the Titanic disaster.
@@ -148,7 +147,7 @@ The RandomForestClassifier resulted in a 94% accuracy; however, the results of t
 
 ![](Resources/Images/randomforest.png)
 ___
-Pandas Profiling - During the research and analysis of the modeling process, Pandas profiling was discovered as a great way to view the overall statistics of the data.  It is visually more appealing and interactive. 
+Pandas_Profiling. During the research and analysis of the modeling process, Pandas profiling was discovered as a tool to view the overall statistics of the data.  It is visually more appealing and interactive. 
 
 THIS MAY NOT BE THE IMAGE WE WANT TO USE FOR THE PANDAS PROFILING...
 
