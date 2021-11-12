@@ -156,7 +156,7 @@ Formatting the story board was a challenge for the team.  There was time spent b
 ### Results:
 There were 2,433 passengers and crew on the Titanic at the time of the sinking. There were only 20 lifeboats that had the capacity to carry a total of 1,178 people, or about half the passengers. The ship was built to carry up to 64 boats.  Only 712 people that survived the shipwreck, or 30% of the passengers. This left a lot of empty space on the boats and not enough room for everyone. 
 
-When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results.
+When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results as a percentage.
 
 These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability.  The accuracy rate of the Random Forest Classifier was 95%; however, the predictability was only at 78%.  
 
