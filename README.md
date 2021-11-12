@@ -158,16 +158,20 @@ There were 2,433 passengers and crew on the Titanic at the time of the sinking. 
 
 When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results as a percentage.
 
-These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability.  The accuracy rate of the Random Forest Classifier was 95%; however, the predictability was only at 78%.  
+These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability as the accuracy rate of the Random Forest Classifier was 95% and predictability was only at 78%.  The other demographics considered were also not predictors of survivability.
 
-Our conclusion is that the demographics of the passenger and crew members should be prediction indicators they do not predict survivability.  There were not enough boats, too many people, and they were so disorganized that there was total chaos.  
+Our conclusion is that the demographics of the passenger and crew members are not prediction indicators of survivability.  
+
+There were not enough boats, too many people, and there was total chaos.
+
+An interesting fact not related to the anaylsis is that the price of the tickets were exorbitant. The fares ranged from £3.17 to £512.33.  The average was £43.55, which equates to £5,387.48 in 2021 (or $7,226.23)  
 
 ### Future Recommendations:
-While the data from the Kaggle challenge was very clean, we wanted to challenge ourselves with multiple sources of data that was not in an ideal state.  This gave us good experience in the cleaning of the data; however, it also gave us a lot more data than necessary.  This muddied the waters a bit and caused us to go into a rabbit hole and have analysis paralysis.  It would be good in the future to look at the data set and only use what you think would be predictors.  Then if it did not work as expected, you can add additional information.  
+The Pandas Profiling was an interesting discovery that can be explored in future analysis.
+    
+While the data from the Kaggle challenge was very clean, we wanted to challenge ourselves with multiple sources of data that was not in an ideal state.  This gave us good experience in the cleaning of the data.  It did give us a lot more data than necessary and did not find anything different from what the clean Kaggle data gave us.  This also muddied the waters a bit causing us to go into a rabbit hole and have analysis paralysis.  It would be good in the future to look at the data set and only use what you think would be predictors.  Then if it did not work as expected, you can add additional information.  
 
-We (Shrese) also struggled a bit with the data cleaning.  We got ahead of ourselves. We did not fully understand that even though each dataset came from the same source, there was not a unique identifier.  We had to back up and build the unique identifier before we moved further.  It is recommended make sure you have that identifier before you start cleaning and analyzing.  
-
-We also learned that it is ok to take the data in a raw state and analyze in Excel before cleaning.
+We looked at how long the survivors lived after the tradegy.  It would be interesting to compare that to life expectancies of that time.
 
 ## Sources:  
 [Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)   
@@ -177,4 +181,5 @@ We also learned that it is ok to take the data in a raw state and analyze in Exc
 [Machine Learning Code - betterprogramming](https://betterprogramming.pub/titanic-survival-prediction-using-machine-learning-4c5ff1e3fa16)  
 [RandomForestClassifier](https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8)  
 [Kaggle Titanic Test/Train Dataset](https://www.kaggle.com/c/titanic/data)  
-[QuickDBD](https://www.quickdatabasediagrams.com/)
+[QuickDBD](https://www.quickdatabasediagrams.com/)  
+[CPI Inflation Calculator](https://www.in2013dollars.com/uk/inflation/1912)
