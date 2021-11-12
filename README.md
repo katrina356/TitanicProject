@@ -9,9 +9,9 @@ There are many mysteries around the Titanic and a lot of information gathered ab
 * Had lots of data  
 * Historical reference
 
-Our assumption is that the model will predict whether someone would survive using demographics that include age, ticket class, and gender.  We also analyzed other passenger demographics to see if they were an impact.  
+Our assumption is that the model will predict whether or not someone would survive using demographics that include age, ticket class, and gender.  We also analyzed other passenger demographics to see if they were an impact.  
 
-As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class because they were further away from the lifeboats. Another example is a passenger in third class has a better survivability rate than someone in first class, because the third-class passengers had the grit to survive a tragedy.
+As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class, because they were further away from the lifeboats. Another example is a passenger in third class has a better survivability rate than someone in first class, because the third-class passengers had the grit to survive a tragedy.
 
 
 ## Contributors
@@ -51,10 +51,11 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 
 ## External Presentations
 * [Google Presentation](https://docs.google.com/presentation/d/1s3Yb2CB7xHdOnEonHknPmTtLHNYMpXDFo4cBXckvWIc/edit#slide=id.p)
-* [Tableau](https://public.tableau.com/app/profile/katrina.holcomb/viz/Titanic_Prelim_V2/TitanicFinal?publish=yes)
+* [Tableau](https://public.tableau.com/app/profile/katrina.holcomb/viz/Titanic_Prelim_V2/TheTitanicandPassengers)
 
 ## Technology and Analytic Tools
 * Excel to obtain initial datasets in .csv format.
+* QuickDBD to organize our tables
 * PGAdmin to build the DataFrame via PostgreSQL.
 * Jupyter Notebook for the machine learning.
 * Tableau for visualization and interactivity.  
@@ -69,24 +70,26 @@ The datasets were pulled from our final chosen site, Encyclopedia Titanica in .c
 ## Database
 After the decision was made on the datasets, PostgreSQL via PGAdmin was used to build the DataFrame.
 
-Steps Taken:
-* Used ERD to create a schema of the data, showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
+Cleaning Steps
+* Removed special characters from names.
+* Relaced strings in age with numerical data. 
+* Created unique identifiers so that the files could be combined.
+
+Database Creation Steps:
+* Used ERD to create a schema of the data, showing how the data is organized and connected via QuickDBD.  
 
 ![](Resources/Images/QuickDBD-export.png)
 
-* Utilized the ERD tables to build in PostgreSQL. (table_creation.slq)
+* Utilized the ERD tables to build in PostgreSQL. 
 * Imported original dataset to PostgresSQL.
-* SQL queries written to make the data more usable and complete.  
+* SQL queries were written to make the data more usable and complete.  
     * Column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
     * The NULL values in the survived_y_n was replaced with 0.
         * survived = 1
         * not survived = 0
     * Removed passengers and crew members that were not on the Titanic when it hit the iceberg.
-    * Removed special characters from names.
-    * Relaced strings in age with numerical data. 
-* SQL queries combined the four datasets into the final dataset. (sql_statement.sql)
-* The combined data was exported into the DataFrame used for analysis. (RMS_Titanic_Final_DataFrame.csv)  
-
+* SQL queries combined the four datasets into the final dataset. 
+* The combined data was exported into the DataFrame used for analysis. 
 ![](Resources/Images/pgadmin.png)
 
 The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was the passenger names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have its own index so that the data could be connected.
@@ -171,4 +174,5 @@ We also learned that it is ok to take the data in a raw state and analyze in Exc
 [Machine Learning Code - activestate](https://www.activestate.com/blog/how-to-use-machine-learning-to-determine-titanic-survivors/)  
 [Machine Learning Code - betterprogramming](https://betterprogramming.pub/titanic-survival-prediction-using-machine-learning-4c5ff1e3fa16)  
 [RandomForestClassifier](https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8)  
-[Kaggle Titanic Test/Train Dataset](https://www.kaggle.com/c/titanic/data)
+[Kaggle Titanic Test/Train Dataset](https://www.kaggle.com/c/titanic/data)  
+[QuickDBD](https://www.quickdatabasediagrams.com/)
