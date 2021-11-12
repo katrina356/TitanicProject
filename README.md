@@ -150,7 +150,7 @@ Tableau was utilized for the interactive portion of the project.  An interactive
 
 ![](Resources/Images/TableauImageSbr.png)
 
-Formatting the story board was a challenge for the team.  There was time spent buiding the dashboard and then researching how to make it look professional.
+Formatting the story board was a challenge for the team.  There was time spent building the dashboard and then researching how to make it look professional.
 
 ## Conclusion
 ### Results:
@@ -164,14 +164,14 @@ Our conclusion is that the demographics of the passenger and crew members are no
 
 There were not enough boats, too many people, and there was total chaos.
 
-An interesting fact not related to the anaylsis is that the price of the tickets were exorbitant. The fares ranged from £3.17 to £512.33.  The average was £43.55, which equates to £5,387.48 in 2021 (or $7,226.23)  
+An interesting fact not related to the analysis is that the price of the tickets was exorbitant. The fares ranged from £3.17 to £512.33.  The average was £43.55, which equates to £5,387.48 in 2021 (or $7,226.23)  
 
 ### Future Recommendations:
 The Pandas Profiling was an interesting discovery that can be explored in future analysis.
-    
+
 While the data from the Kaggle challenge was very clean, we wanted to challenge ourselves with multiple sources of data that was not in an ideal state.  This gave us good experience in the cleaning of the data.  It did give us a lot more data than necessary and did not find anything different from what the clean Kaggle data gave us.  This also muddied the waters a bit causing us to go into a rabbit hole and have analysis paralysis.  It would be good in the future to look at the data set and only use what you think would be predictors.  Then if it did not work as expected, you can add additional information.  
 
-We looked at how long the survivors lived after the tradegy.  It would be interesting to compare that to life expectancies of that time.
+We looked at how long the survivors lived after the tragedy.  It would be interesting to compare that to life expectancies of that time.
 
 ## Sources:  
 [Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)   
