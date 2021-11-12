@@ -164,7 +164,7 @@ Our conclusion is that the demographics of the passenger and crew members are no
 
 There were not enough boats, too many people, and there was total chaos.
 
-An interesting fact not related to the analysis is that the price of the tickets was exorbitant. The fares ranged from £3.17 to £512.33.  The average was £43.55, which equates to £5,387.48 in 2021 (or $7,226.23)  
+An interesting fact not related to the analysis is that the price of the tickets was exorbitant. The fares ranged from £3.17 to £512.33.  The average was £30.93, which equates to £3,710.34 in 2021 (or $4,976.13)  
 
 ### Future Recommendations:
 The Pandas Profiling was an interesting discovery that can be explored in future analysis.
