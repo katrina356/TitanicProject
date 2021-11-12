@@ -55,7 +55,7 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 
 ## Technology and Analytic Tools
 * Excel to obtain initial datasets in .csv format.
-* QuickDBD to organize our tables
+* QuickDBD to organize our tables.
 * PGAdmin to build the DataFrame via PostgreSQL.
 * Jupyter Notebook for the machine learning.
 * Tableau for visualization and interactivity.  
@@ -63,9 +63,7 @@ Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed 
 ## Data Exploration
 Several sites were reviewed for datasets.  These included Kaggle, Data is Plural, and Encyclopedia Titanica.  The Encyclopedia Titanica site had the most valuable dataset and three tables were utilized.  The table reviewed from Data is Plural was also used. 
 
-Six sources of data were chosen from these sites.  We reviewed the raw data in order to decide which information we needed to utilize from each dataset.  This helped us understand whether we needed all or some of the datasets.
-
-The datasets were pulled from our final chosen site, Encyclopedia Titanica in .csv format.  These files were connected to Jupyter Notebook through SQLAlchemy. The data in these files were analyzed to see the data types, how it might be used and how it should be cleaned.
+Four files were chosen in .csv format.  We reviewed the raw data in order to decide which information we needed and how it needed to be cleaned.  We combined the data into one DataFrame using PGAdmin, and Jupyter Notebook was used for the machine learning utilizing Pandas and Matplotlib.  
 
 ## Database
 After the decision was made on the datasets, PostgreSQL via PGAdmin was used to build the DataFrame.
@@ -74,6 +72,8 @@ Cleaning Steps
 * Removed special characters from names.
 * Relaced strings in age with numerical data. 
 * Created unique identifiers so that the files could be combined.
+* Removed any columns not needed for the analysis.
+
 
 Database Creation Steps:
 * Used ERD to create a schema of the data, showing how the data is organized and connected via QuickDBD.  
@@ -141,14 +141,16 @@ The RandomForestClassifier resulted in a 94% accuracy; however, the results of t
 
 ![](Resources/Images/randomforest.png)
 ___
-During the research and analysis of the modeling process, Pandas profiling was discovered as a tool to view the overall statistics of the data.  It is visually more appealing and interactive. 
+During the research and analysis of the modeling process, Pandas profiling was discovered as a tool to view the overall statistics of the data.  It is visually more appealing and interactive.  
 
 ![](Resources/Images/pandasprofiling.png)
 
 ## Interactive Dashboard
-Tableau was utilized for the interactive portion of the project.  A story board was created to see if we could answer all the questions that were discussed at the start of the project.  We looked to tell a story about the people who were on the Titanic and survivability rates based on different passenger/crew demographics.
+Tableau was utilized for the interactive portion of the project.  An interactive story board was created to see if we could answer all the questions that were discussed at the start of the project.  We looked to tell a story about the people who were on the Titanic and survivability rates based on different passenger/crew demographics.
 
-IMAGE
+![](Resources/Images/TableauImageSbr.png)
+
+Formatting the story board was a challenge for the team.  There was time spent buiding the dashboard and then researching how to make it look professional.
 
 ## Conclusion
 ### Results:
@@ -156,7 +158,7 @@ There were 2,433 passengers and crew on the Titanic at the time of the sinking. 
 
 When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results.
 
-These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability.  The accuracy rate of the Random Forest Classifier was 95%; however, the predictability was only at 74%.  
+These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability.  The accuracy rate of the Random Forest Classifier was 95%; however, the predictability was only at 78%.  
 
 Our conclusion is that the demographics of the passenger and crew members should be prediction indicators they do not predict survivability.  There were not enough boats, too many people, and they were so disorganized that there was total chaos.  
 
