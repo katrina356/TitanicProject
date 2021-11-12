@@ -1,26 +1,24 @@
-# Survival Rates on the Titanic (Are you a Leo or a Kate?)
+* # Survival Rates on the Titanic (Are you a Leo or a Kate?)
 Final Project for Denver University Data Analytics Bootcamp
 
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are a lot of mysteries around the Titanic. Who survived, who did not survive and why? We selected this subject to understand some of the "whys" around the passengers survivability. Also, history is interesting, and as a team we wanted to do a project that was
+There are many mysteries around the Titanic and a lot of information gathered about the people that traveled on the ship’s maiden voyage. Who survived, who did not survive and why? We selected this subject to try to understand some of the "why’s and how’s" around the passengers survivability. Also, history is interesting, and as a team we wanted to do a project that was
 * Interesting to all of us
 * Had lots of data  
 * Historical reference
 
-During this exploratory phase  we learned that we all have a passion for history and for diving into data.
+Our assumption is that from analyzing demographics around the passengers and crew of the Titanic, the model will predict whether or not someone would survive based on age, ticket class, and gender.  We also analyzed other passenger demographics to see if they were an impact.  
+As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class. Another example, a passenger in third class has a better survivability rate than someone in first class because the third-class passengers had the grit to survive a tragedy.
 
-From analyzing demographics around the passengers and crew of the Titanic, the model will predict whether or not someone would survive based on age, ticket class, and gender.
-
-As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class. Another example, a passenger in third class has a better survivability rate than someone in first class because the third class passanger had the grit to survive a tragedy.
 
 ## Contributors
 Member's Name | Role 
 ---------|----------
- [Katrina](https://github.com/katrina356) | Dashboard & Visualization 
- [Sara](https://github.com/sarifrey) | Machine Learning 
- [Shrese](https://github.com/shrese) | Database 
+ [Katrina](https://github.com/katrina356) | GitHub & Visualization & Google Slides
+ [Sara](https://github.com/sarifrey) | Machine Learning Model & Communication Protocol
+ [Shrese](https://github.com/shrese) | Database & README
 
 *All members worked together on each section to ensure accuracy of data, modeling, and information provided to the reader.
 
@@ -31,7 +29,7 @@ Task Status Update | Slack and T/TH Class Time | 3x a Week | Project Team | All
 Project Status Update |	Thursday Class Time |	1 x Week |	TAs |	All
 Action Items Follow-up |	Slack and T/TH Class Time |	Saturday of Week Due		
 Risks Review and Update |	Tuesday Class Time |	1x Week	Project | Team |	All
-Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; So After no more than 20 Minutes of Frustration |	Project Team |	All
+Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; So, after no more than 20 Minutes of Frustration |	Project Team |	All
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
 ## Initial questions for consideration
@@ -65,13 +63,13 @@ Several sites were reviewed for datasets.  These included Kaggle, Data is Plural
 
 Six sources of data were chosen from these sites.  We reviewed the raw data in order to decide which information we needed to utilize from each dataset.  This helped us understand whether we needed all or some of the datasets.
 
-The datasets were pulled from our final chosen site, Encyclopedia Titanica in .csv format.  These files were connected to Jupyter Notebook through SQLAlchemy. The data in these files were analyzed to see the dataypes, how it might be used and how it should be cleaned.
+The datasets were pulled from our final chosen site, Encyclopedia Titanica in .csv format.  These files were connected to Jupyter Notebook through SQLAlchemy. The data in these files were analyzed to see the data types, how it might be used and how it should be cleaned.
 
 ## Database
-AFter the decision was made on the datasets, PostgreSQL via PGAdmin was used to build the DataFrame.
+After the decision was made on the datasets, PostgreSQL via PGAdmin was used to build the DataFrame.
 
 Steps Taken:
-* Used ERD to creaet a schema of the data, showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
+* Used ERD to create a schema of the data, showing how the data is organized and connected via [QuickDBD](https://www.quickdatabasediagrams.com/).  
 
 ![](Resources/Images/QuickDBD-export.png)
 
@@ -79,18 +77,18 @@ Steps Taken:
 * Imported original dataset to PostgresSQL.
 * SQL queries written to make the data more usable and complete.  
     * Column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
-    * The NULL values in the survived_y_n were replaced with 0.
+    * The NULL values in the survived_y_n was replaced with 0.
         * survived = 1
         * not survived = 0
-    * Removed assengers and crew members that were not on the Titanic when it hit the iceberg.
+    * Removed passengers and crew members that were not on the Titanic when it hit the iceberg.
     * Removed special characters from names.
     * Relaced strings in age with numerical data. 
-* SQL queries wused to combine the four datasets into the final dataset. (sql_statement.sql)
+* SQL queries combined the four datasets into the final dataset. (sql_statement.sql)
 * The combined data was exported into the DataFrame used for analysis. (RMS_Titanic_Final_DataFrame.csv)  
 
 ![](Resources/Images/pgadmin.png)
 
-The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was the passenger names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have it's own index so that the data could be connected.
+The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was the passenger names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have its own index so that the data could be connected.
 
 ## Machine Learning Model
 The RandomForestClassifier was initially utilized for this analysis to predict who survived the Titanic disaster.
@@ -134,16 +132,12 @@ Features by importance:
     (0.2139435376173998, 'gender'),  
     (0.11452194680648929, 'ticket_class'),  
     (0.1023419958134857, 'fare'),
-
 ___
-Age + survived_y_n + category returns that the younger people, especially crew members did not survive.
-___
-
-The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix is poor at 78%.  Overall, the numbers are okay. The f1-score is high enough. Precision is decent. SHOULD WE SAY WHY PRECISION IS DECENT?
+The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix are poor at 78%.  Overall, the numbers are okay. The f1-score is high enough. Precision is decent for non-survivors with correctly prediction of 81%; however, it is only 69% survivors.
 
 ![](Resources/Images/randomforest.png)
 ___
-Pandas_Profiling. During the research and analysis of the modeling process, Pandas profiling was discovered as a tool to view the overall statistics of the data.  It is visually more appealing and interactive. 
+During the research and analysis of the modeling process, Pandas profiling was discovered as a tool to view the overall statistics of the data.  It is visually more appealing and interactive. 
 
 ![](Resources/Images/pandasprofiling.png)
 
@@ -154,36 +148,20 @@ IMAGE
 
 ## Conclusion
 ### Results:
+There were 2,433 passengers and crew on the Titanic at the time of the sinking. There were only 20 lifeboats that had the capacity to carry a total of 1,178 people, or about half the passengers. The ship was built to carry up to 64 boats.  Only 712 people that survived the shipwreck, or 30% of the passengers. This left a lot of empty space on the boats and not enough room for everyone. 
 
-What is the model telling us that we predict survivablity?
-* better chance of survive if female
-* What does age really tell us?
-* Ticket class and fare are related with similar importance at ~10%
+When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results.
 
-What does the model not tell us?
+These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability.  The accuracy rate of the Random Forest Classifier was 95%; however, the predictability was only at 74%.  
 
-give best interpretation of what the model suggests
-
-As number of survivors a relativemen and women 
-Women and children survived with the detrmining factor 
-
-If you are woman you are 73% likely to survive 
-survior rate for women (including children)
-18% of the men survived
-48% of children survived
-
-there were 2423 people of which 712, or 29% survived
-
-The average age is very young which skews the ability to survive. is this feature skewed because of the age. the majority are between 15-35, and very few over 75.
-
-do a whiskers chart?
-
-
-
-
+Our conclusion is that the demographics of the passenger and crew members should be prediction indicators they do not predict survivability.  There were not enough boats, too many people, and they were so disorganized that there was total chaos.  
 
 ### Future Recommendations:
+While the data from the Kaggle challenge was very clean, we wanted to challenge ourselves with multiple sources of data that was not in an ideal state.  This gave us good experience in the cleaning of the data; however, it also gave us a lot more data than necessary.  This muddied the waters a bit and caused us to go into a rabbit hole and have analysis paralysis.  It would be good in the future to look at the data set and only use what you think would be predictors.  Then if it did not work as expected, you can add additional information.  
 
+We (Shrese) also struggled a bit with the data cleaning.  We got ahead of ourselves. We did not fully understand that even though each dataset came from the same source, there was not a unique identifier.  We had to back up and build the unique identifier before we moved further.  It is recommended make sure you have that identifier before you start cleaning and analyzing.  
+
+We also learned that it is ok to take the data in a raw state and analyze in Excel before cleaning.
 
 ## Sources:  
 [Encyclopedia Titanica](https://www.encyclopedia-titanica.org/)   
