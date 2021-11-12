@@ -1,16 +1,17 @@
-* # Survival Rates on the Titanic (Are you a Leo or a Kate?)
-Final Project for Denver University Data Analytics Bootcamp
+# Survival Rates on the Titanic (Are you a Leo or a Kate?)
+### Final Project for Denver University Data Analytics Bootcamp
 
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are many mysteries around the Titanic and a lot of information gathered about the people that traveled on the ship’s maiden voyage. Who survived, who did not survive and why? We selected this subject to try to understand some of the "why’s and how’s" around the passengers survivability. Also, history is interesting, and as a team we wanted to do a project that was
+There are many mysteries around the Titanic and a lot of information gathered about the people that traveled on the ship’s maiden voyage. Who survived, who did not survive and why? We selected this subject to try to understand some of the "why’s and how’s" around the passengers survivability. Also, history is interesting, and we wanted to do a project that was
 * Interesting to all of us
 * Had lots of data  
 * Historical reference
 
-Our assumption is that from analyzing demographics around the passengers and crew of the Titanic, the model will predict whether or not someone would survive based on age, ticket class, and gender.  We also analyzed other passenger demographics to see if they were an impact.  
-As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class. Another example, a passenger in third class has a better survivability rate than someone in first class because the third-class passengers had the grit to survive a tragedy.
+Our assumption is that the model will predict whether someone would survive using demographics that include age, ticket class, and gender.  We also analyzed other passenger demographics to see if they were an impact.  
+
+As an example, someone who worked in the engine room would have a lower survivability rate than a passenger in first class because they were further away from the lifeboats. Another example is a passenger in third class has a better survivability rate than someone in first class, because the third-class passengers had the grit to survive a tragedy.
 
 
 ## Contributors
