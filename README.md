@@ -4,7 +4,7 @@
 ![](Resources/Images/R.jpg)    
 
 ## Topic - Titanic Survivability
-There are many mysteries around the Titanic and a lot of information gathered about the people that traveled on the ship’s maiden voyage. Who survived, who did not survive and why? We selected this subject to try to understand some of the "why’s and how’s" around the passengers survivability. Also, history is interesting, and we wanted to do a project that was
+There are many mysteries around the Titanic and a lot of information gathered about the people that traveled on the ship’s maiden voyage. Who survived, who did not survive and why? We selected this subject to try to understand some of the "why’s and how’s" around the passengers survivability. Also, we wanted to do a project that was
 * Interesting to all of us
 * Had lots of data  
 * Historical reference
@@ -28,9 +28,9 @@ Name of Communication | Format | Frequency | Audience | Owner
 ----------------------|--------|-----------|----------|------
 Task Status Update | Slack and T/TH Class Time | 3x a Week | Project Team | All
 Project Status Update |	Thursday Class Time |	1 x Week |	TAs |	All
-Action Items Follow-up |	Slack and T/TH Class Time |	Saturday of Week Due		
+Action Items Follow-up |	Slack and T/TH Class Time |	Saturday of Week Due | Project Team | All		
 Risks Review and Update |	Tuesday Class Time |	1x Week	Project | Team |	All
-Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; So, after no more than 20 Minutes of Frustration |	Project Team |	All
+Project Communication and Questions |	Project Slack Channel |	Before Pulling Hair Out; After no more than 20 Minutes of Frustration |	Project Team |	All
 Wits End Project Communication and Questions |	Titans Slack Channel |	As Needed |	TAs	 | All
 
 ## Initial questions for consideration
@@ -84,12 +84,13 @@ Database Creation Steps:
 * Imported original dataset to PostgresSQL.
 * SQL queries were written to make the data more usable and complete.  
     * Column names were changed as PGAdmin would not allow the original name, because they were functions within the SQL language.
-    * The NULL values in the survived_y_n was replaced with 0.
+    * The NULL values in the survived_y_n were replaced with 0.
         * survived = 1
         * not survived = 0
     * Removed passengers and crew members that were not on the Titanic when it hit the iceberg.
 * SQL queries combined the four datasets into the final dataset. 
 * The combined data was exported into the DataFrame used for analysis. 
+
 ![](Resources/Images/pgadmin.png)
 
 The biggest challenge to the data was understanding how the data worked and how to connect the files.  The first thought was the passenger names might be the way to connect the data; however, it was discovered that the names were not consistent across all datasets.  The data required that each name have its own index so that the data could be connected.
@@ -100,16 +101,16 @@ The RandomForestClassifier was initially utilized for this analysis to predict w
 Steps Taken:
 * Explore the data. See what is available. 
     * Install the Panadas_Profiling package.
-    * Tied charts using the Seaborn_Library after seeing the results in the Kaggle Titanic dataset.  
+    * Linked charts using the Seaborn_Library after seeing the results in the Kaggle Titanic dataset.  
     * Create charts on survivability based on factors: age, gender, and ticket class.
 * Look at the baseline model. (Suggested in the Titanic dataset writeups.  The Kaggle Titanic dataset baseline for the women surviving is 70 percent.) 
 * Code machine learning algorithms.  
-    * In the preprocessing, transformed data
-    * Removed data not used or not informing survivability.
-    * Ran Random Forest Classifier
-    * Created and ran confusion matrix
+    * In the preprocessing, transform data
+    * Remove data not used or not informing survivability.
+    * Ran RandomForestClassifier
+    * Create and run confusion matrix
 
-How data was used:
+Utilization of data:
 Data | Training | Testing | To Numeric
 ---------|:----------:|:---------:|:---------:
 gender^ | x | x | x | 
@@ -118,15 +119,11 @@ age | x | x |  |
 marital_status | x | x | x | 
 category | x | x | x | 
 embarked | x | x | x | 
-country_of_residence | x | x | x |  
-sibsp¶ | x | x |  | 
-parch¶ | x | x |  | 
 fare† | x | x |  | 
 survived_y_n†† | | x | | 
 
 Any unlisted columns from the DataFrame were removed.  
 ^ Gender and ticket_class are the primary features for determining survivability on the Titanic.  
-¶ Sibsp and Parch denote how many siblings/parents were on board.  
 † Fare is a sub feature based on ticket_class.  
 †† The feature “survived_y_n” was removed from the training to test the accuracy.  
  
@@ -135,9 +132,9 @@ Features by importance:
     (0.30503702309593206, 'age'),  
     (0.2139435376173998, 'gender'),  
     (0.11452194680648929, 'ticket_class'),  
-    (0.1023419958134857, 'fare'),
+    (0.1023419958134857, 'fare'), 
 ___
-The RandomForestClassifier resulted in a 94% accuracy; however, the results of the Confusion Matrix are poor at 78%.  Overall, the numbers are okay. The f1-score is high enough. Precision is decent for non-survivors with correctly prediction of 81%; however, it is only 69% survivors.
+The RandomForestClassifier results in a 94% accuracy; however, the results of the Confusion Matrix are poor at 78%.  Overall, the numbers are okay. The f1-score is high enough. Precision is decent for non-survivors at 81%; however, it is only 69% for survivors.
 
 ![](Resources/Images/randomforest.png)
 ___
@@ -154,17 +151,17 @@ Formatting the story board was a challenge for the team.  There was time spent b
 
 ## Conclusion
 ### Results:
-There were 2,433 passengers and crew on the Titanic at the time of the sinking. There were only 20 lifeboats that had the capacity to carry a total of 1,178 people, or about half the passengers. The ship was built to carry up to 64 boats.  Only 712 people that survived the shipwreck, or 30% of the passengers. This left a lot of empty space on the boats and not enough room for everyone. 
+There were 2,423 passengers and crew on the Titanic at the time of the sinking. There were only 20 lifeboats that had the capacity to carry a total of 1,178 people, or about half the passengers. The ship was built to carry up to 64 boats.  Only 712 people survived the shipwreck, or 30% of the passengers. This left a lot of empty space on the boats and not enough room for everyone. 
 
 When looking at the data we discovered that approximately the same number of men (353) survived compared to women (359).  The number of people that survived across the three ticket classes were relatively the same.  However, as a percentage more women survived (72%) than men (18%).  Ticket class had the same results as a percentage.
 
-These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability as the accuracy rate of the Random Forest Classifier was 95% and predictability was only at 78%.  The other demographics considered were also not predictors of survivability.
+These statistics would lead you to believe that the gender and ticket class would be good predictors of whether or not you would survive the shipwreck.  However, the model was unable to predict survivability as the accuracy rate of the RandomForestClassifier was 95% and predictability was only at 78%.  The other demographics considered were also not predictors of survivability.
 
 Our conclusion is that the demographics of the passenger and crew members are not prediction indicators of survivability.  
 
 There were not enough boats, too many people, and there was total chaos.
 
-An interesting fact not related to the analysis is that the price of the tickets was exorbitant. The fares ranged from £3.17 to £512.33.  The average was £30.93, which equates to £3,710.34 in 2021 (or $4,976.13)  
+An interesting fact not related to the analysis is that the price of the tickets was relative. The fares ranged from £3.17 to £512.33.  The average was £30.93, which equates to £3,710.34 in 2021 (or $4,976.13)  
 
 ### Future Recommendations:
 The Pandas Profiling was an interesting discovery that can be explored in future analysis.
